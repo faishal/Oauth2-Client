@@ -17,17 +17,17 @@ $client = new OAuth2\Client(
         'CALLBACK_URL');
 
 // configuration of service
-$configuration = new OAuth2\Service\Configuration(
+$configuration = new rtOAuth2\Service\Configuration(
         'AUTHORIZE_ENDPOINT',
         'ACCESS_TOKEN_ENDPOINT');
 
-// storage class for access token, just implement OAuth2\DataStore interface for
+// storage class for access token, just implement rtOAuth2\DataStore interface for
 // your own implementation
-$dataStore = new OAuth2\DataStore\Session();
+$dataStore = new rtOAuth2\DataStore\Session();
 
 $scope = null;
 
-$service = new OAuth2\Service($client, $configuration, $dataStore, $scope);
+$service = new rtOAuth2\Service($client, $configuration, $dataStore, $scope);
 
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
