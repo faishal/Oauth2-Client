@@ -1,15 +1,15 @@
 <?php
-namespace rtOAuth2;
+namespace myOAuth2;
 
 interface DataStore
 {
     /**
-     * @param \rtOAuth2\Token $token
+     * @param \myOAuth2\Token $token
      */
     function storeAccessToken(Token $token);
 
     /**
-     * @return \rtOAuth2\Token
+     * @return \myOAuth2\Token
      */
     function retrieveAccessToken();
 }

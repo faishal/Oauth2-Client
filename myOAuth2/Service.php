@@ -1,20 +1,20 @@
 <?php
-namespace rtOAuth2;
+namespace myOAuth2;
 
 class Service
 {
     /**
-     * @var \rtOAuth2\Client
+     * @var \myOAuth2\Client
      */
     private $_client;
 
     /**
-     * @var \rtOAuth2\Service\Configuration
+     * @var \myOAuth2\Service\Configuration
      */
     private $_configuration;
 
     /**
-     * @var \rtOAuth2\DataStore
+     * @var \myOAuth2\DataStore
      */
     private $_dataStore;
 
@@ -24,9 +24,9 @@ class Service
     private $_scope;
 
     /**
-     * @param \rtOAuth2\Client $client
-     * @param \rtOAuth2\Service\Configuration $configuration
-     * @param \rtOAuth2\DataStore $dataStore
+     * @param \myOAuth2\Client $client
+     * @param \myOAuth2\Service\Configuration $configuration
+     * @param \myOAuth2\DataStore $dataStore
      * @param string $scope optional
      */
     public function  __construct(Client $client,
@@ -97,8 +97,8 @@ class Service
     /**
      * refresh access token
      *
-     * @param \rtOAuth2\Token $token
-     * @return \rtOAuth2\Token new token object
+     * @param \myOAuth2\Token $token
+     * @return \myOAuth2\Token new token object
      */
     public function refreshAccessToken(Token $token) {
         if (! $token->getRefreshToken()) {
@@ -122,9 +122,9 @@ class Service
     /**
      * parse the response of an access token request and store it in dataStore
      *
-     * @param \rtOAuth2\HttpClient $http
+     * @param \myOAuth2\HttpClient $http
      * @param string $oldRefreshToken
-     * @return \rtOAuth2\Token
+     * @return \myOAuth2\Token
      */
     private function _parseAccessTokenResponse(HttpClient $http, $oldRefreshToken = null) {
         $headers = $http->getHeaders();

@@ -11,23 +11,23 @@ spl_autoload_register(function ($class) {
 });
 
 
-$client = new OAuth2\Client(
+$client = new myOAuth2\Client(
         'CLIENT_ID',
         'CLIENT_SECRET',
         'CALLBACK_URL');
 
 // configuration of service
-$configuration = new rtOAuth2\Service\Configuration(
+$configuration = new myOAuth2\Service\Configuration(
         'AUTHORIZE_ENDPOINT',
         'ACCESS_TOKEN_ENDPOINT');
 
-// storage class for access token, just implement rtOAuth2\DataStore interface for
+// storage class for access token, just implement myOAuth2\DataStore interface for
 // your own implementation
-$dataStore = new rtOAuth2\DataStore\Session();
+$dataStore = new myOAuth2\DataStore\Session();
 
 $scope = null;
 
-$service = new rtOAuth2\Service($client, $configuration, $dataStore, $scope);
+$service = new myOAuth2\Service($client, $configuration, $dataStore, $scope);
 
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {

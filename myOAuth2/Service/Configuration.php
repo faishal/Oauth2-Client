@@ -1,5 +1,5 @@
 <?php
-namespace rtOAuth2\Service;
+namespace myOAuth2\Service;
 
 class Configuration
 {

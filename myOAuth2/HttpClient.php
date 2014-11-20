@@ -1,6 +1,6 @@
 <?php
 
-namespace rtOAuth2;
+namespace myOAuth2;
 
 class HttpClient
 {
